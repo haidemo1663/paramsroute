@@ -42,11 +42,15 @@ app.get('/users/create',(req,res)=>{
   });
 app.get('/users/:id',(req,res)=>{
   var id =req.params.id;
-  console.log(id);
   var user=users.find({id:id}).value();
-  console.log(user)
   res.render('users/view',{users:user});
-})
+});
+app.get('/users/:id/delete',(req,res)=>{
+  var id =req.params.id;
+  console.log(id);
+  users.remove({id: id}).write();
+  res.render('users',{users:users.value()})
+});
 app.listen(port, (rep,res)=>{
     console.log('day la port: '+port)
 })
