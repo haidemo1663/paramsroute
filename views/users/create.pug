@@ -1,0 +1,7 @@
+form(action='/users/create' method="POST")
+    lable Name 
+    input(type="text" name="name" value="")
+    button Create
+ul
+  each user in users
+    li= user.name
