@@ -49,7 +49,7 @@ app.get('/users/:id/delete',(req,res)=>{
   var id =req.params.id;
   console.log(id);
   users.remove({id: id}).write();
-  res.render('users',{users:users.value()})
+  res.redirect('/users')
 });
 app.listen(port, (rep,res)=>{
     console.log('day la port: '+port)
