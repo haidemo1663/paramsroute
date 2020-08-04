@@ -4,6 +4,9 @@ form(action='/users' method="GET")
   button Search
 ul
   each user in users
-    li= user.name
+    li
+      span= user.name
+      span &nbsp; 
+      a(href='/users/'+ user.id) View
 
 script document.querySelector("input").setAttribute("value",`#{keyword}`);
