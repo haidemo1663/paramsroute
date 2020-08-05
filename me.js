@@ -21,7 +21,7 @@ app.get('/users',(req,res)=>{
         res.render('users/index',{users: users.value()});
     }
     else{
-        var matchUser=users.filter(user=>{
+        var matchUser=users.value().filter(user=>{
             return user['name'].toLowerCase().indexOf(q.toLowerCase()) !== -1;
         });
         res.render('users/index',{users: matchUser,keyword: q});
